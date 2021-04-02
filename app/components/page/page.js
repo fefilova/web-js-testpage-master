@@ -28,7 +28,6 @@ class Page {
   onChangePage = (e, text) => {
     $('title').text(text);
     $(window).trigger("page-changed", text);
-    $(window).trigger("change-language", text);
   }
 
 }

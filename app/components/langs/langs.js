@@ -7,23 +7,32 @@ class Language {
 
     $(window).on('main:ready', (e, data) => {
 
-      const $langs =  this.$element.find(".langs__item")
+      const $langs_item =  this.$element.find(".langs__item")
 
       data.texts.forEach(element => {
         const $langItem = $(`<li class="langs__item">${element}</li>`)
-        $langItem.insertBefore($langs)
+        $langItem.insertBefore($langs_item)
       });
+
+      const $dropdown = this.$element.find('p')
+      $dropdown.on("click", this.onClickDropDown);
     })
   }
 
-  editLang = (e) => {
-    //const $items = this.$element.find('.langs__item')
+  onClickDropDown = (e) => {
     console.log(e)
+    const $items = this.$element.find('.langs__items')
+    $items.addClass("langs_active")
+
+  }
+
+  editLang = () => {
+
   }
 }
 
 
-$('.langs__items').each((index, element) => {
+$('.langs').each((index, element) => {
   new Language($(element));
 });
 

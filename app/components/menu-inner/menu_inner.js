@@ -27,9 +27,11 @@ class Menu {
   }
 
   onClick = (e) => {
+    console.log(e)
     const $currentTarget = $(e.currentTarget);
     e.preventDefault();
     $currentTarget.trigger("change-page", $currentTarget.text());
+
   }
 
   editMenu = (e, text) => {
