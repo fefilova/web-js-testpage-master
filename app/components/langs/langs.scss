@@ -1,7 +1,7 @@
 .langs {
 
     display: inline-block;
-    
+
     position: relative;
     width: 35px;
 
@@ -12,7 +12,7 @@
     color: $sdark;
 
     @include FONT-LANGS();
-	
+
 	cursor: pointer;
 
 	p{
@@ -37,7 +37,7 @@
 
         transition: .2s transform, .2s top;
 	}
-	
+
 	@include PHONE-N {
 
 	    // line-height: $PHONE-H_PHONE;
@@ -48,7 +48,7 @@
 		    width: 8px;
 	    }
 	}
-	
+
 	@include TABLET-N {
 
 	    // font-size: 12px;
@@ -93,7 +93,7 @@ $lang-item_pb: 14px;
     left: - $lang-item_pb;
     z-index: 1;
     display: none;
-   
+
     @include PHONE-N{
 	    top: auto;
 	    bottom: - $lang-item_pb;
@@ -102,12 +102,12 @@ $lang-item_pb: 14px;
 }
 
 .langs__item {
-    
+
     display: block;
     margin-bottom: 10px;
     cursor: pointer;
-	width: 16px;
-	
+	  width: 16px;
+
     &:hover{
         opacity: 0.8;
     }
@@ -118,7 +118,7 @@ $lang-item_pb: 14px;
 }
 
 .langs_active{
-	
+
 	&:after {
 	   	transform: scale(1,-1);
 	}
