@@ -1,0 +1,13 @@
+mixin menu-inner( current_page, current_city )
+  .menu-inner(data-city=current_city)
+    .menu-inner__wrapper
+      .menu-inner__button-close
+      ul.menu-inner__list
+        li.menu-inner__item
+      .menu-inner__download
+        .menu-inner__download-button
+          a(href="#").link_button
+            .menu-inner__download-button-img
+            .menu-inner__download-button-text
+        p.menu-inner__footer
+  block

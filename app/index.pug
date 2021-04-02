@@ -1,0 +1,17 @@
+include components/page/page.pug
+include components/mixins/mixins.pug
+include components/content-part-column/content-part-column.pug
+include components/column-item/column-item.pug
+include components/contact/contact.pug
+include components/inner-part/inner-part.pug
+include components/menu-inner/menu-inner.pug
+
++page('')
+  +menu-inner("")
+  include components/menu-inner/menu-inner.pug
+  .inner-part
+    .inner-part__image
+      img(src="images/inner-illustrations-5.png")
+    +inner-part-content(id="ipc")
+      +inner-part-column
+        a(href="#").inner-part__link в Вене
