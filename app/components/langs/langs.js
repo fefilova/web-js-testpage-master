@@ -3,7 +3,7 @@ class Language {
 
     this.$element = $element;
 
-    $(window).on('change-language', this.editLang);
+    $(window).on('change-language');
 
     $(window).on('main:ready', (e, data) => {
 
@@ -16,9 +16,10 @@ class Language {
         $langsItems.append($langsItem)
         $langsItem.on("click", this.editLang)
       });
-
       $dropdown.on("click", this.onClickDropDown);
 
+      //TODO: сделать сохранение в localstorage requestAnimationFrame
+      $(window).trigger("change-language","ru");
     })
   }
 
@@ -30,10 +31,10 @@ class Language {
 
   editLang = (e) => {
     const $items = this.$element.find('.langs')
-   //$items.data("key")
-    console.log($(e.currentTarget).text())
-    $('.langs p').text($(e.currentTarget).text())
+    const lang = $(e.currentTarget).data("key");
+    this.$element.find('.langs p').text(lang);
     $items.toggleClass("langs_active", false)
+    $(window).trigger("change-language",lang);
   }
 }
 
